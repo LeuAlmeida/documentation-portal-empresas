@@ -1,0 +1,60 @@
+REQUEST
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://services.experian.com.br/DataLicensing/DataLicensingService/">
+    <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-2">
+            <wsse:Username>USER</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">PASSWORD</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <dat:ConsultarPJ>
+         <parameters>
+            
+            <cnpj>59696799000145</cnpj>
+           
+            <RetornoPJ>
+               
+               <razaoSocial>false</razaoSocial>
+            
+               <endereco>false</endereco>
+               
+               <quadroSocial>true</quadroSocial>           
+            </RetornoPJ>
+         </parameters>
+      </dat:ConsultarPJ>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+RESPONSE
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <S:Header>
+      <wsse:Security S:mustUnderstand="1">
+         <wsu:Timestamp wsu:Id="_1" xmlns:ns15="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity" xmlns:ns14="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns13="http://www.w3.org/2003/05/soap-envelope">
+            <wsu:Created>2019-12-30T12:37:28Z</wsu:Created>
+            <wsu:Expires>2019-12-30T12:42:28Z</wsu:Expires>
+         </wsu:Timestamp>
+      </wsse:Security>
+   </S:Header>
+   <S:Body>
+      <ns3:ConsultarPJResponse xmlns:ns3="http://services.experian.com.br/DataLicensing/DataLicensingService/" xmlns:ns2="http://www.experian.com.br/schema/infocleanws">
+         <result>
+            <quadroSocial>
+               <quadroSocial>
+                  <documento>49798713000131</documento>
+                  <nome>IRACEMA JOSEFA DA SILVA</nome>
+                  <participacao>85.00</participacao>
+                  <tipo>PESSOA_JURIDICA</tipo>
+               </quadroSocial>
+               <quadroSocial>
+                  <documento>49798713000131</documento>
+                  <nome>KATIA REGINA DE FREITAS</nome>
+                  <tipo>PESSOA_FISICA</tipo>
+               </quadroSocial>
+            </quadroSocial>
+         </result>
+      </ns3:ConsultarPJResponse>
+   </S:Body>
+</S:Envelope>
