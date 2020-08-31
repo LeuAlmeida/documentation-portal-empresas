@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:util="http://boavistaservicos.com.br/marketing-service/xml/util"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/util" schemaLocation="../util/util.xsd"/>
+
+    <xs:element name="cadastro_completo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cpf" type="util:cpf"  minOccurs="0"/>
+                <xs:element name="nome" type="xs:string" minOccurs="0"/>
+                <xs:element name="nome_mae" type="xs:string" minOccurs="0"/>
+                <xs:element name="data_nascimento" type="util:dataMesAno" minOccurs="0"/>
+                <xs:element name="situcao_cpf" type="xs:string" minOccurs="0"/>
+                <xs:element name="data_atualizacao_cpf" type="util:dataMesAno" minOccurs="0"/>
+                <xs:element name="regiao_origem_cpf" type="xs:string" minOccurs="0"/>
+                <xs:element name="nacionalidade" type="xs:string"  minOccurs="0"/>
+                <xs:element name="signo" type="xs:string" minOccurs="0"/>
+                <xs:element name="sexo" type="util:sexo" minOccurs="0"/>
+                <xs:element name="numero_rg" type="xs:string" minOccurs="0"/>
+                <xs:element name="orgao_expedidor_rg" type="xs:string" minOccurs="0"/>
+                <xs:element name="data_emissao_rg" type="util:dataMesAno" minOccurs="0"/>
+                <xs:element name="uf_rg" type="xs:string" minOccurs="0"/>
+                <xs:element name="grau_instrucao" type="xs:string" minOccurs="0"/>
+                <xs:element name="quantidade_dependente" type="xs:int" minOccurs="0"/>
+                <xs:element name="estado_civil" type="xs:string" minOccurs="0"/>
+                <xs:element name="numero_titulo_eleitor" type="xs:string" minOccurs="0"/>
+                <xs:element name="obito" type="util:obito" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

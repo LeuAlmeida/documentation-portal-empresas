@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/telefone"
+           xmlns:util="http://boavistaservicos.com.br/marketing-service/xml/util"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/telefone"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/util" schemaLocation="../util/util.xsd"/>
+
+    <xs:element name="telefone">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="ddd" type="xs:string" minOccurs="0"/>
+                    <xs:element name="numero" type="xs:string" minOccurs="0"/>
+                    <xs:element name="tipo" type="util:tipo_telefone" minOccurs="0"/>
+                    <xs:element name="classificacao" type="xs:string" minOccurs="0"/>
+                    <xs:element name="data_inclusao" type="util:dataMesAno" minOccurs="0"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

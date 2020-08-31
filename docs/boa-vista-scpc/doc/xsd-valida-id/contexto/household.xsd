@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/household"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/household"
+           xmlns:util="http://boavistaservicos.com.br/marketing-service/xml/util"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/util" schemaLocation="../util/util.xsd"/>
+
+    <xs:element name="household">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="cpf"   type="util:cpf"  minOccurs="0"/>
+                    <xs:element name="nome"  type="xs:string" minOccurs="0"/>
+                    <xs:element name="data_nascimento" type="util:dataMesAno" minOccurs="0"/>
+                    <xs:element name="signo" type="xs:string" minOccurs="0"/>
+                    <xs:element name="sexo"  type="util:sexo" minOccurs="0"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

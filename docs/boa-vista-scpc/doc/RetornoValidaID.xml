@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<consultaCadastral xmlns="http://boavistaservicos.com.br/marketing-service/xml/consulta_cadastral" xmlns:house="http://boavistaservicos.com.br/marketing-service/xml/household" xmlns:loca="http://boavistaservicos.com.br/marketing-service/xml/localizacao" xmlns:basi="http://boavistaservicos.com.br/marketing-service/xml/cadastro_basico" xmlns:prel="http://boavistaservicos.com.br/marketing-service/xml/pessoa_relacionada" xmlns:tel="http://boavistaservicos.com.br/marketing-service/xml/telefone" xmlns:end="http://boavistaservicos.com.br/marketing-service/xml/endereco" xmlns:qual="http://boavistaservicos.com.br/marketing-service/xml/qualificacao" xmlns:comp="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo">
+    <basi:cadastro_basico>
+        <basi:cpf>26884624825</basi:cpf>
+        <basi:nome>Nome Teste</basi:nome>
+        <basi:nome_mae>Nome Teste Mae</basi:nome_mae>
+        <basi:data_nascimento>26/08/1976</basi:data_nascimento>
+        <basi:situcao_cpf>Regular</basi:situcao_cpf>
+    </basi:cadastro_basico>
+    <comp:cadastro_completo>
+        <comp:cpf>26884624825</comp:cpf>
+        <comp:nome>Nome Teste</comp:nome>
+        <comp:nome_mae>Nome Teste Mae</comp:nome_mae>
+        <comp:data_nascimento>26/08/1976</comp:data_nascimento>
+        <comp:situcao_cpf>Regular</comp:situcao_cpf>
+        <comp:data_atualizacao_cpf>01/01/0001</comp:data_atualizacao_cpf>
+        <comp:regiao_origem_cpf>Sao Paulo</comp:regiao_origem_cpf>
+        <comp:signo>Virgem</comp:signo>
+        <comp:sexo>F</comp:sexo>
+        <comp:grau_instrucao>Pos Graduacao Completa</comp:grau_instrucao>
+        <comp:estado_civil>Solteiro</comp:estado_civil>
+        <comp:obito>NAO</comp:obito>
+    </comp:cadastro_completo>
+    <loca:localizacao>
+        <loca:cpf>26884624825</loca:cpf>
+        <loca:email>anselmo@hudsonrebello.com.br</loca:email>
+        <end:endereco>
+            <end:tipo_logradouro>R</end:tipo_logradouro>
+            <end:logradouro>Testes</end:logradouro>
+            <end:numero>12</end:numero>
+            <end:complemento>BLOCO TESTE</end:complemento>
+            <end:bairro>Bairro Teste</end:bairro>
+            <end:cep>01014000</end:cep>
+            <end:cidade>Sao Paulo</end:cidade>
+            <end:uf>SP</end:uf>
+        </end:endereco>
+        <tel:telefone>
+            <tel:ddd>0</tel:ddd>
+            <tel:numero>222223925</tel:numero>
+            <tel:tipo>CELULAR</tel:tipo>
+        </tel:telefone>
+        <tel:telefone>
+            <tel:ddd>0</tel:ddd>
+            <tel:numero>222223923</tel:numero>
+            <tel:tipo>CELULAR</tel:tipo>
+        </tel:telefone>
+        <tel:telefone>
+            <tel:ddd>0</tel:ddd>
+            <tel:numero>222223924</tel:numero>
+            <tel:tipo>CELULAR</tel:tipo>
+        </tel:telefone>
+        <tel:telefone>
+            <tel:ddd>11</tel:ddd>
+            <tel:numero>929321346</tel:numero>
+            <tel:tipo>CELULAR</tel:tipo>
+        </tel:telefone>
+        <tel:telefone>
+            <tel:ddd>11</tel:ddd>
+            <tel:numero>929332347</tel:numero>
+            <tel:tipo>CELULAR</tel:tipo>
+        </tel:telefone>
+    </loca:localizacao>
+    <qual:qualificacao>
+        <qual:cpf>26884624825</qual:cpf>
+        <qual:obito>NAO</qual:obito>
+        <prel:pessoa_relacionada>
+            <prel:nome>Nome Teste Mae</prel:nome>
+            <prel:grau_parentesco>Mae</prel:grau_parentesco>
+        </prel:pessoa_relacionada>
+    </qual:qualificacao>
+</consultaCadastral>
+
+
+•	Caso telefone retorne dois ou três cpfs, será retornado o modulo CB com nome e cpf para realizar uma nova consulta.
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<consultaCadastral xmlns="http://boavistaservicos.com.br/marketing-service/xml/consulta_cadastral" xmlns:house="http://boavistaservicos.com.br/marketing-service/xml/household" xmlns:loca="http://boavistaservicos.com.br/marketing-service/xml/localizacao" xmlns:basi="http://boavistaservicos.com.br/marketing-service/xml/cadastro_basico" xmlns:prel="http://boavistaservicos.com.br/marketing-service/xml/pessoa_relacionada" xmlns:tel="http://boavistaservicos.com.br/marketing-service/xml/telefone" xmlns:end="http://boavistaservicos.com.br/marketing-service/xml/endereco" xmlns:qual="http://boavistaservicos.com.br/marketing-service/xml/qualificacao" xmlns:comp="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo">
+    <basi:cadastro_basico>
+        <basi:cpf>04205831900</basi:cpf>
+        <basi:nome>Valdiney Ferreira De Matos</basi:nome>
+    </basi:cadastro_basico>
+    <basi:cadastro_basico>
+        <basi:cpf>40466930704</basi:cpf>
+        <basi:nome>Milena De Fatima Nunes</basi:nome>
+    </basi:cadastro_basico>
+    <basi:cadastro_basico>
+        <basi:cpf>87559250300</basi:cpf>
+        <basi:nome>Maria Das Neves Dias Ferreira</basi:nome>
+    </basi:cadastro_basico>
+</consultaCadastral>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/erro"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/erro"
+           elementFormDefault="qualified">
+
+    <xs:element name="erro">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="codigo" type="xs:string" minOccurs="0"/>
+                    <xs:element name="erro" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

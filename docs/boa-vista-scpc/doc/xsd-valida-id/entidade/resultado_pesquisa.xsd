@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:util="http://boavistaservicos.com.br/marketing-service/xml/util"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/resultado_pesquisa"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/resultado_pesquisa"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/util" schemaLocation="../util/util.xsd"/>
+
+    <xs:element name="resultado_pesquisa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string" minOccurs="0"/>
+                <xs:element name="nome_mae" type="xs:string" minOccurs="0"/>
+                <xs:element name="data_nascimento" type="util:dataMesAno" minOccurs="0"/>
+                <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

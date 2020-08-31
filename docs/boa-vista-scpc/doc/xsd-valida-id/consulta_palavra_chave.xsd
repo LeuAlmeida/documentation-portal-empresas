@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/consulta_palavra_chave"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:res="http://boavistaservicos.com.br/marketing-service/xml/resultado_pesquisa"
+           elementFormDefault="qualified">
+  
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/resultado_pesquisa" schemaLocation="entidade/resultado_pesquisa.xsd"/>
+ 
+    <xs:element name="ConsultaPalavraChave">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element ref="res:resultado_pesquisa" minOccurs="1" maxOccurs="15"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/util"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/util"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="cpf">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{11}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dataMesAno">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|1[012])\d\d\d\d"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dataDiaMesAno">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])\d\d\d\d"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipo_endereco">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NAO_INFORMADO"/>
+            <xs:enumeration value="NAO_SE_APLICA"/>
+            <xs:enumeration value="NAO_IDENTIFICADO"/>
+            <xs:enumeration value="RESIDENCIAL"/>
+            <xs:enumeration value="COMERCIAL"/>
+            <xs:enumeration value="PUBLICO"/>
+            <xs:enumeration value="COMUTARIO"/>
+            <xs:enumeration value="OUTRO"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="obito">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SIM"/>
+            <xs:enumeration value="NAO"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipo_telefone">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CELULAR"/>
+            <xs:enumeration value="FIXO"/>
+            <xs:enumeration value="NEXTEL"/>
+            <xs:enumeration value="PABX"/>
+            <xs:enumeration value="FAX"/>
+            <xs:enumeration value="SKYPE"/>
+            <xs:enumeration value="VOIP"/>
+            <xs:enumeration value="OUTROS"/>
+            <xs:enumeration value="EMAIL"/>
+            <xs:enumeration value="FIXO_RECADO"/>
+            <xs:enumeration value="NAO_INFORMADO"/>
+            <xs:enumeration value="NAO_SE_APLICA"/>
+            <xs:enumeration value="NAO_IDENTIFICADO"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="sexo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="I"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

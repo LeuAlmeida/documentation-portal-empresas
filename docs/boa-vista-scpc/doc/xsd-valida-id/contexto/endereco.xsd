@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://boavistaservicos.com.br/marketing-service/xml/endereco"
+           xmlns:util="http://boavistaservicos.com.br/marketing-service/xml/util"
+           targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/endereco"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/util" schemaLocation="../util/util.xsd"/>
+
+    <xs:element name="endereco">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="tipo_endereco" type="util:tipo_endereco" minOccurs="0"/>
+                    <xs:element name="tipo_logradouro" type="xs:string" minOccurs="0"/>
+                    <xs:element name="logradouro" type="xs:string" minOccurs="0"/>
+                    <xs:element name="numero" type="xs:string" minOccurs="0"/>
+                    <xs:element name="complemento" type="xs:string" minOccurs="0"/>
+                    <xs:element name="bairro" type="xs:string" minOccurs="0"/>
+                    <xs:element name="cep" type="xs:string" minOccurs="0"/>
+                    <xs:element name="cidade" type="xs:string" minOccurs="0"/>
+                    <xs:element name="uf" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

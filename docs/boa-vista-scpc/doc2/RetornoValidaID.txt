@@ -1,0 +1,101 @@
+{
+    "cadastroBasico": [
+        {
+            "cpf": "26884624825",
+            "nome": "Nome Teste",
+            "nomeMae": "Nome Teste Mae",
+            "dataNascimento": "26/08/1976",
+            "situacaoCPF": "Regular"
+        }
+    ],
+    "cadastroCompleto": {
+        "cpf": "26884624825",
+        "nome": "Nome Teste",
+        "nomeMae": "Nome Teste Mae",
+        "dataNascimento": "26/08/1976",
+        "situacaoCPF": "Regular",
+        "dataAtualizacaoCPF": "01/01/0001",
+        "regiaoOrigemCPF": "Sao Paulo",
+        "signo": "Virgem",
+        "sexo": "F",
+        "grauInstrucao": "Pos Graduacao Completa",
+        "estadoCivil": "Solteiro",
+        "obito": "Não"
+    },
+    "localizacao": {
+        "cpf": "26884624825",
+        "emails": [
+            "anselmo@hudsonrebello.com.br"
+        ],
+        "enderecos": [
+            {
+                "tipoLogradouro": "R",
+                "logradouro": "Testes",
+                "numero": "12",
+                "complemento": "BLOCO TESTE",
+                "bairro": "Bairro Teste",
+                "cidade": "Sao Paulo",
+                "uf": "SP",
+                "cep": "01014000"
+            }
+        ],
+        "telefones": [
+            {
+                "ddd": "0",
+                "numero": "222223925",
+                "tipo": "CELULAR"
+            },
+            {
+                "ddd": "0",
+                "numero": "222223923",
+                "tipo": "CELULAR"
+            },
+            {
+                "ddd": "0",
+                "numero": "222223924",
+                "tipo": "CELULAR"
+            },
+            {
+                "ddd": "11",
+                "numero": "929321346",
+                "tipo": "CELULAR"
+            },
+            {
+                "ddd": "11",
+                "numero": "929332347",
+                "tipo": "CELULAR"
+            }
+        ]
+    },
+    "qualificacao": {
+        "cpf": "26884624825",
+        "obito": "Não",
+        "pessoasRelacionada": [
+            {
+                "nome": "Nome Teste Mae",
+                "grauParentesco": "Mae"
+            }
+        ]
+    }
+}
+
+
+
+•	Caso telefone retorne dois ou três cpfs, será retornado o modulo CB com nome e cpf para realizar uma nova consulta.
+
+{
+    "cadastroBasico": [
+        {
+            "cpf": "04205831900",
+            "nome": "Valdiney Ferreira De Matos"
+        },
+        {
+            "cpf": "40466930704",
+            "nome": "Milena De Fatima Nunes"
+        },
+        {
+            "cpf": "87559250300",
+            "nome": "Maria Das Neves Dias Ferreira"
+        }
+    ]
+}

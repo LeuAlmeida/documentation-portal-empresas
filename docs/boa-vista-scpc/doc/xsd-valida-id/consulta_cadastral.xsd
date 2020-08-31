@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://boavistaservicos.com.br/marketing-service/xml/consulta_cadastral"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:basi="http://boavistaservicos.com.br/marketing-service/xml/cadastro_basico"
+           xmlns:comp="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo"
+           xmlns:loca="http://boavistaservicos.com.br/marketing-service/xml/localizacao"
+           xmlns:qual="http://boavistaservicos.com.br/marketing-service/xml/qualificacao"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/cadastro_basico"   schemaLocation="tipo_consulta/cadastro_basico.xsd"/>
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/cadastro_completo" schemaLocation="tipo_consulta/cadastro_completo.xsd"/>
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/localizacao" schemaLocation="tipo_consulta/localizacao.xsd"/>
+    <xs:import namespace="http://boavistaservicos.com.br/marketing-service/xml/qualificacao" schemaLocation="tipo_consulta/qualificacao.xsd"/>
+
+    <xs:element name="consultaCadastral">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element ref="basi:cadastro_basico" maxOccurs="3"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element ref="comp:cadastro_completo"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element ref="loca:localizacao"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element ref="qual:qualificacao"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
