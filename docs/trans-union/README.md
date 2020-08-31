@@ -13,4 +13,13 @@ Para fazer o seu login acesse a url: http://ziponline.zipcode.com.br
 
 <hr />
 
+Olá, você esta recebendo este e-mail pois o usuário administrador Giovanni Tronquini, através do sistema ZipOnline 3.1, solicitou que um novo token fosse gerado para o usuário abaixo.
+
+## Login: `teste_einstein`
+## Email: `andre.dsantos@einstein.br`
+
+Novo token: efff19c4-401d-440c-a471-7ade3022fb79
+
+A partir deste momento o token anterior está invalidado.
+
 *Conforme contrato e cláusula específica de confidencialidade, esta senha é pessoal e intransferível, não podendo ser divulgada a terceiros e nem mesmo à TransUnion e qualquer um de seus funcionários.
