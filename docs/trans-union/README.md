@@ -8,3 +8,9 @@ Seguem abaixo seu login e senha:
 
 ## Login: `teste_einstein`
 ## Senha: `[y4w!lJ0uy`
+
+Para fazer o seu login acesse a url: http://ziponline.zipcode.com.br
+
+<hr />
+
+*Conforme contrato e cláusula específica de confidencialidade, esta senha é pessoal e intransferível, não podendo ser divulgada a terceiros e nem mesmo à TransUnion e qualquer um de seus funcionários.
