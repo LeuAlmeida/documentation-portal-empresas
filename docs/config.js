@@ -9,8 +9,8 @@ const config = {
     logo: 'https://leunardo.dev/einstein/Logo-Albert-Einstein.svg',
     logoLink: 'https://www.einstein.br/',
     title:
-      "<img class='img-responsive' src='https://leunardo.dev/einstein/Logo-Albert-Einstein.svg' alt='Einstein Logo' />",
-      // "",
+      // "<img class='img-responsive' src='https://leunardo.dev/einstein/Logo-Albert-Einstein.svg' alt='Einstein Logo' />",
+      "",
     githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
     helpUrl: '',
     tweetText: '',
