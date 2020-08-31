@@ -11,7 +11,7 @@ const config = {
     title:
       // "<img class='img-responsive' src='https://leunardo.dev/einstein/Logo-Albert-Einstein.svg' alt='Einstein Logo' />",
       "",
-    githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
+    githubUrl: 'https://github.com/LeuAlmeida/schedule-telecoms-einstein',
     helpUrl: '',
     tweetText: '',
     social: `<li>
@@ -45,7 +45,8 @@ const config = {
     collapsedNav: [
       '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union' // add trailing slash if enabled above
     ],
-    links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    // links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    links: [],
     frontline: false,
     ignoreIndex: true,
     title:
@@ -55,7 +56,7 @@ const config = {
     title: 'Gatsby Gitbook Boilerplate | Hasura',
     description: 'Documentation built with mdx. Powering hasura.io/learn ',
     ogImage: null,
-    docsLocation: 'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
+    docsLocation: 'https://github.com/LeuAlmeida/schedule-telecoms-einstein/tree/master/content',
     favicon: 'https://www.einstein.br/PortalAssets/images/einstein.ico',
   },
   pwa: {
