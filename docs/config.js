@@ -39,10 +39,10 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/index', '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union'
+      '/index', '/boa-vista-scpc', '/serasa', '/trans-union'
     ],
     collapsedNav: [
-      '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union'
+      '/boa-vista-scpc', '/serasa', '/trans-union'
     ],
     // links: [{ text: 'Hasura', link: 'https://hasura.io' }],
     links: [],
