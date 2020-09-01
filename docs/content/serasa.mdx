@@ -4,17 +4,26 @@ metaTitle: "Syntax Highlighting is the meta title tag for this page"
 metaDescription: "This is the meta description for this page"
 ---
 
+## ✅ Avaliação
+
+- Dificuldade de implementação: **Médio**
+- Dificuldade de manutenção: **Médio**:
+- Tempo médio de resposta da API: **2.3s**
+- Linguagem da API: **XML**
+
 ## Exemplo de requisição:
 
-**HOMOLOG:** 
+**HOMOLOG:**
 
-[POST] https://sitenethomologa.serasa.com.br:443/experian-data-licensing-ws/dataLicensingService
+**[POST]** https://sitenethomologa.serasa.com.br:443/experian-data-licensing-ws/dataLicensingService
 
 <hr/>
 
 **PROD:**
 
-[POST] https://sitenet.serasa.com.br:443/experian-data-licensing-ws/dataLicensingService
+**[POST]** https://sitenet.serasa.com.br:443/experian-data-licensing-ws/dataLicensingService
+
+### XML Entrada
 
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://services.experian.com.br/DataLicensing/DataLicensingService/">
@@ -40,4 +49,42 @@ metaDescription: "This is the meta description for this page"
       </dat:ConsultarPF>
    </soapenv:Body>
 </soapenv:Envelope>
+```
+
+### XML Saída (Ainda sem permissão de acesso)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope
+  xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <S:Header>
+    <wsse:Security S:mustUnderstand="1">
+      <wsu:Timestamp
+        xmlns:ns15="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity"
+        xmlns:ns14="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+        xmlns:ns13="http://www.w3.org/2003/05/soap-envelope" wsu:Id="_1">
+        <wsu:Created>2020-09-01T14:26:51Z</wsu:Created>
+        <wsu:Expires>2020-09-01T14:31:51Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </S:Header>
+  <S:Body>
+    <S:Fault
+      xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+      <faultcode>S:Server</faultcode>
+      <faultstring>Usuário/Logon sem permissão de acesso - Ausência de transação</faultstring>
+      <detail>
+        <ns2:DataLicensingFault
+          xmlns:ns3="http://ws.wim.omninetworking.com.br/"
+          xmlns:ns2="http://services.experian.com.br/DataLicensing/DataLicensingService/">
+          <codeReason>110</codeReason>
+          <reason>Usuário/Logon sem permissão de acesso - Ausência de transação</reason>
+        </ns2:DataLicensingFault>
+      </detail>
+    </S:Fault>
+  </S:Body>
+</S:Envelope>
 ```

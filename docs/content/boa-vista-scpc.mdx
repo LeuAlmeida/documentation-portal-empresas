@@ -4,9 +4,16 @@ metaTitle: 'Syntax Highlighting is the meta title tag for this page'
 metaDescription: 'This is the meta description for this page'
 ---
 
+## ✅ Avaliação
+
+- Dificuldade de implementação: **Fácil**
+- Dificuldade de manutenção: **Fácil**:
+- Tempo médio de resposta da API: **1.67s**
+- Linguagem da API: **JSON**
+
 ## Exemplo de requisição:
 
-[GET] https://consumer.bvsnet.com.br/dadoscadastrais/json/v02
+**[GET]** https://consumer.bvsnet.com.br/dadoscadastrais/json/v02
 
 ### Query Params:
 
@@ -29,7 +36,42 @@ metaDescription: 'This is the meta description for this page'
 - Consulta realizada pelo telefone, retornara sempre o modulo LO mesmo que não tenha sido selecionado.
 - Caso telefone retorne dois ou três cpfs, será retornado o modulo CB com nome e cpf para realizar uma nova consulta.
 
+## JSON Entrada:
+
+Exemplo utilizando axios
+
+```js
+async get(request: Request, response: Response) {
+    const { cpf } = request.params;
+
+    const boaVistaResponse = await axios.get("https://consumer.bvsnet.com.br/dadoscadastrais/json/v02", {
+      params: {
+        usuario: process.env.BOAVISTA_USERNAME,
+        senha: process.env.BOAVISTA_PASSWORD,
+        cpf: "33439893634",
+        params: 'CB',
+      },
+    });
+
+    return response.json(boaVistaResponse.data);
+  }
+```
+
 ## JSON Saída:
+
+```json
+{
+  "cadastroBasico": {
+    "cpf": "37800807886",
+    "nome": "Leonardo Oliveira De Almeida",
+    "nomeMae": "Herica Ribeiro De Oliveira",
+    "dataNascimento": "18/07/1999",
+    "situacaoCPF": "Regular"
+  }
+}
+```
+
+## Todas as saídas
 
 ```json
 {
