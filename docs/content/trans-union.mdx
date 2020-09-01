@@ -4,4 +4,89 @@ metaTitle: ''
 metaDescription: ''
 ---
 
-# TODO
+## ✅ Avaliação
+
+- Dificuldade de implementação: **Fácil**
+- Dificuldade de manutenção: **Fácil**:
+- Tempo médio de resposta da API: **208ms**
+- Linguagem da API: **JSON ou XML**
+
+## Exemplo de requisição:
+
+**[GET]** https://service.zipcode.com.br/RestService.svc/ConsultaPF/json
+
+### Query Params:
+
+```shell
+?token=<token> # Token fornecido pela empresa
+?cpf=<cpf> # CPF a ser pesquisado
+```
+
+## JSON Entrada:
+
+Exemplo utilizando `axios`
+
+```js
+class GetDataTransUnionService {
+  async get(request: Request, response: Response) {
+    const { cpf } = request.params;
+
+    const transUnionResponse = await axios.get(
+      String(process.env.TRANS_UNION_URL),
+      {
+        params: {
+          token: process.env.TRANS_UNION_TOKEN,
+          cpf,
+        },
+      },
+    );
+
+    return response.json(transUnionResponse.data);
+  }
+}
+```
+
+## JSON Saída:
+
+```json
+{
+  "DADOS_PRINCIPAIS": {
+    "DS_SEXO": "FEMININO",
+    "DT_NASCIMENTO": "\/Date(-360363600000-0300)\/",
+    "NM_COMPLETO": "JOYCE CHAIPP MOCKDECE HALLACK",
+    "NR_ANO_OBITO": "",
+    "NR_CPF": 33439893634,
+    "NR_IDADE": 62
+  },
+  "TELEFONES": [
+    {
+      "FG_ASSINANTE": false,
+      "FG_CELULAR": false,
+      "FG_PROCON": false,
+      "NR_DDD": 32,
+      "NR_TELEFONE": 30154891
+    },
+    {
+      "FG_ASSINANTE": true,
+      "FG_CELULAR": true,
+      "FG_PROCON": false,
+      "NR_DDD": 32,
+      "NR_TELEFONE": 988557736
+    },
+    {
+      "FG_ASSINANTE": true,
+      "FG_CELULAR": true,
+      "FG_PROCON": false,
+      "NR_DDD": 32,
+      "NR_TELEFONE": 988472538
+    },
+    {
+      "FG_ASSINANTE": false,
+      "FG_CELULAR": true,
+      "FG_PROCON": false,
+      "NR_DDD": 32,
+      "NR_TELEFONE": 988329488
+    }
+  ]
+}
+```

@@ -8,7 +8,7 @@ metaDescription: ''
 
 - Dificuldade de implementação: **Fácil**
 - Dificuldade de manutenção: **Fácil**:
-- Tempo médio de resposta da API: **1.67s**
+- Tempo médio de resposta da API: **1.4s**
 - Linguagem da API: **JSON**
 
 ## Exemplo de requisição:
@@ -38,23 +38,25 @@ metaDescription: ''
 
 ## JSON Entrada:
 
-Exemplo utilizando axios
+Exemplo utilizando `axios`
 
 ```js
-async get(request: Request, response: Response) {
+class GetDataBoaVistaService {
+  async get(request: Request, response: Response) {
     const { cpf } = request.params;
 
     const boaVistaResponse = await axios.get("https://consumer.bvsnet.com.br/dadoscadastrais/json/v02", {
       params: {
         usuario: process.env.BOAVISTA_USERNAME,
         senha: process.env.BOAVISTA_PASSWORD,
-        cpf: "33439893634",
+        cpf,
         params: 'CB',
       },
     });
 
     return response.json(boaVistaResponse.data);
   }
+}
 ```
 
 ## JSON Saída:

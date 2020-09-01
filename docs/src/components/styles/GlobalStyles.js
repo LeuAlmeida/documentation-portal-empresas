@@ -729,6 +729,10 @@ export const baseStyles = injectGlobal`
     padding: 0;
   }
   .topnav {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
     -webkit-transition: top 0.5s, bottom 0.5s;
   }
 
