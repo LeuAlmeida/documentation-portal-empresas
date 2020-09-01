@@ -39,22 +39,21 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/introduction', // add trailing slash if enabled above
-      '/codeblock',
+      '/index', '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union'
     ],
     collapsedNav: [
-      '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union' // add trailing slash if enabled above
+      '/boa-vista-scpc', '/serasa', '/serasa-experian', '/trans-union'
     ],
     // links: [{ text: 'Hasura', link: 'https://hasura.io' }],
     links: [],
     frontline: false,
-    ignoreIndex: true,
+    ignoreIndex: false,
     title:
       "schedule<div class='greenCircle'></div>telecoms",
   },
   siteMetadata: {
-    title: 'Gatsby Gitbook Boilerplate | Hasura',
-    description: 'Documentation built with mdx. Powering hasura.io/learn ',
+    title: 'Telecoms Schedule API - HIAE',
+    description: 'The purpose of this API is, through jobs scheduled by node-cron, to consult the database and save the respective data consulted in Serasa/Boa Vista SCPC for credit/debit invoices.',
     ogImage: null,
     docsLocation: 'https://github.com/LeuAlmeida/schedule-telecoms-einstein/tree/master/content',
     favicon: 'https://www.einstein.br/PortalAssets/images/einstein.ico',

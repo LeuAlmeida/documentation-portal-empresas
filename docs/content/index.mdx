@@ -1,30 +1,49 @@
 ---
-title: "Landing Page"
+title: "Introdução"
+metaTitle: "Introdução aos objetivos do projeto"
+metaDescription: ""
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise. Some more text. Additional text.
+O objetivo desta API é, por meio de jobs agendados pelo node-cron, consultar o banco de dados e salvar os respectivos dados consultados no SCPC Serasa / Boa Vista para faturas de crédito / débito.
 
-# Heading H1
-Heading 1 text
+# Instruções referente à API
 
-## Heading H2
-Heading 2 text
+### 🔌 Preparando o servidor
 
-### Heading H3
-Heading 3 text
+**Pré-requisitos:**
+* NodeJS >= 12.18.3
+* Yarn >= 1.22.4
+* Docker >= 19.03.8
 
-#### Heading H4
-Heading 4 text
+### 🔐 Rodando a aplicação
 
-##### Heading H5
-Heading 5 text
+```bash
+# Clone o projeto
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/telecoms-schedule-api
 
-###### Heading H6
-Heading 6 text
+# Entre na pasta
+$ cd telecoms-schedule-api
 
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+# Instale as dependências
+$ yarn # ou opte pelo npm install
+
+# Rode os contêiners
+$ sudo docker-compose up -d
+```
+
+## Comando do Servidor
+
+Quando tudo estiver finalizado, inicie o servidor
+```bash
+$ yarn dev
+```
+
+## Comando de Build
+
+Para buildar a aplicação, rode o comando abaixo:
+
+```bash
+$ yarn build
+```
+
+Uma pasta **dist** será gerada com o conteúdo TypeScript transpilado.
