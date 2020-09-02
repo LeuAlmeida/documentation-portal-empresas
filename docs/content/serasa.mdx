@@ -51,7 +51,7 @@ metaDescription: ''
 </soapenv:Envelope>
 ```
 
-## XML Saída (Ainda sem permissão de acesso)
+## XML Saída
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -66,25 +66,59 @@ metaDescription: ''
         xmlns:ns15="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity"
         xmlns:ns14="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
         xmlns:ns13="http://www.w3.org/2003/05/soap-envelope" wsu:Id="_1">
-        <wsu:Created>2020-09-01T14:26:51Z</wsu:Created>
-        <wsu:Expires>2020-09-01T14:31:51Z</wsu:Expires>
+        <wsu:Created>2020-09-02T14:47:14Z</wsu:Created>
+        <wsu:Expires>2020-09-02T14:52:14Z</wsu:Expires>
       </wsu:Timestamp>
     </wsse:Security>
   </S:Header>
   <S:Body>
-    <S:Fault
-      xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
-      <faultcode>S:Server</faultcode>
-      <faultstring>Usuário/Logon sem permissão de acesso - Ausência de transação</faultstring>
-      <detail>
-        <ns2:DataLicensingFault
-          xmlns:ns3="http://ws.wim.omninetworking.com.br/"
-          xmlns:ns2="http://services.experian.com.br/DataLicensing/DataLicensingService/">
-          <codeReason>110</codeReason>
-          <reason>Usuário/Logon sem permissão de acesso - Ausência de transação</reason>
-        </ns2:DataLicensingFault>
-      </detail>
-    </S:Fault>
+    <ns2:ConsultarPFResponse
+      xmlns:ns3="http://ws.wim.omninetworking.com.br/"
+      xmlns:ns2="http://services.experian.com.br/DataLicensing/DataLicensingService/">
+      <result>
+        <enderecos>
+          <endereco>
+            <logradouro>
+              <Tipo>R</Tipo>
+              <Titulo>DR</Titulo>
+              <Nome>JOAO PENIDO FILHO</Nome>
+              <Numero>28</Numero>
+              <Complemento>200</Complemento>
+              <CepNota>10</CepNota>
+            </logradouro>
+            <bairro>BOM PASTOR</bairro>
+            <cidade>JUIZ DE FORA</cidade>
+            <uf>MG</uf>
+            <cep>36021600</cep>
+            <idFinalidade>0</idFinalidade>
+          </endereco>
+          <endereco>
+            <logradouro>
+              <Tipo>R</Tipo>
+              <Titulo>DR</Titulo>
+              <Nome>ORMINDO MAIA</Nome>
+              <Numero>1324</Numero>
+              <CepNota>10</CepNota>
+            </logradouro>
+            <bairro>BSQ DO IMPERADOR</bairro>
+            <cidade>JUIZ DE FORA</cidade>
+            <uf>MG</uf>
+            <cep>36037640</cep>
+            <idFinalidade>0</idFinalidade>
+          </endereco>
+        </enderecos>
+        <cpf>33439893634</cpf>
+        <nome>JOYCE CHAIPP MOCKDECE HALLACK</nome>
+        <situacaoCadastral>
+          <codigoSituacao>1</codigoSituacao>
+          <nome>JOYCE CHAIPP MOCKDECE HALLACK</nome>
+          <situacao>REGULAR</situacao>
+          <codigoControle>493B.DF83.41D4.D136</codigoControle>
+          <dataConsulta>2018-01-02T00:00:00.000-02:00</dataConsulta>
+          <fontePesquisada>HISTORICO</fontePesquisada>
+        </situacaoCadastral>
+      </result>
+    </ns2:ConsultarPFResponse>
   </S:Body>
 </S:Envelope>
 ```
