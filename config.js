@@ -10,7 +10,7 @@ const config = {
     logoLink: 'https://www.einstein.br/',
     title:
       // "<img class='img-responsive' src='https://leunardo.dev/einstein/Logo-Albert-Einstein.svg' alt='Einstein Logo' />",
-      "",
+      '',
     githubUrl: 'https://github.com/LeuAlmeida/schedule-telecoms-einstein',
     helpUrl: '',
     tweetText: '',
@@ -38,22 +38,17 @@ const config = {
     },
   },
   sidebar: {
-    forcedNavOrder: [
-      '/index', '/boa-vista-scpc', '/serasa', '/trans-union'
-    ],
-    collapsedNav: [
-      '/boa-vista-scpc', '/serasa', '/trans-union'
-    ],
-    // links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    forcedNavOrder: ['/index', '/Telecoms', '/PowerBI'],
+    collapsedNav: ['/Telecoms', '/PowerBI'],
     links: [],
     frontline: false,
     ignoreIndex: false,
-    title:
-      "schedule<div class='greenCircle'></div>telecoms",
+    title: "portal<div class='greenCircle'></div>empresas",
   },
   siteMetadata: {
     title: 'Telecoms Schedule API - HIAE',
-    description: 'The purpose of this API is, through jobs scheduled by node-cron, to consult the database and save the respective data consulted in Serasa/Boa Vista SCPC for credit/debit invoices.',
+    description:
+      'The purpose of this API is, through jobs scheduled by node-cron, to consult the database and save the respective data consulted in Serasa/Boa Vista SCPC for credit/debit invoices.',
     ogImage: null,
     docsLocation: 'https://github.com/LeuAlmeida/schedule-telecoms-einstein/tree/master/content',
     favicon: 'https://www.einstein.br/PortalAssets/images/einstein.ico',
@@ -61,11 +56,11 @@ const config = {
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
     manifest: {
-      name: 'Gatsby Gitbook Starter',
-      short_name: 'GitbookStarter',
+      name: 'Documentação - Portal Empresas',
+      short_name: 'DocsPortal',
       start_url: '/',
-      background_color: '#6b37bf',
-      theme_color: '#6b37bf',
+      background_color: '#0E2A6B',
+      theme_color: '#0E2A6B',
       display: 'standalone',
       crossOrigin: 'use-credentials',
       icons: [

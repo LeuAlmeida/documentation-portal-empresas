@@ -1,0 +1,121 @@
+---
+title: "Front End"
+metaTitle: "front-end"
+metaDescription: "front-end"
+---
+- Arquivo HTML.
+- Variáveis.
+- Arquivo Javascript.
+---
+## Arquivo HTML (index.html)
+ Para esta aplicação usaremos a lib Jquery para facilitar o desenvolvimento:
+
+ ```javascript
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+```
+
+Agora vamos importar as libs do Power Bi
+
+ ```html
+  <script src="https://microsoft.github.io/PowerBI-JavaScript/demo/node_modules/jquery/dist/jquery.js"></script>
+```
+
+ ```html
+  <script src="https://microsoft.github.io/PowerBI-JavaScript/demo/node_modules/powerbi-client/dist/powerbi.js"></script>
+```
+
+Importe também seu arquivo .js e .css
+
+ ```html
+  <script src="./js/Powerbi-dashboard.js"></script>
+```
+
+ ```html
+  <link href="./css/powerbi.css" rel="stylesheet" />
+```
+Insira em seu HTML uma div que servirá de container para inserirmos o dashbosard
+
+ ```html
+  <div class="powerbi container">
+    <div id="embedContainer"></div>
+  </div>
+```
+Nosso HTML já está preparado para receber o Dashboard, agora vamos configurar o noddo arquivo javascript
+
+
+## Variáveis
+
+Vamos definir nossas variáveis que utilizaremos na contrução do Dashboard que pegamos na doc acima na aba Powe Bi:
+
+ ```javascript
+const embedUrl = 'https://app.powerbi.com/reportEmbed?reportId=53bb4afb-####-####-####-####-##########&groupId=5ed877b1-####-####-####-############'
+const groupId = '5ed877b1-####-####-####-############'
+const reportId = '53bb4afb-####-####-####-####-############'
+```
+
+## Arquivo Javascript (index.js)
+
+Primeiro vamos instanciar o módulo do Power Bi importado no nosso HTML
+
+ ```javascript
+  var models = window["powerbi-client"].models;
+  var permissions = models.Permissions.All;
+```
+Isso nos permitirá usarmos funções da lib do Power Bi Javascript.
+
+Agora vamos montar nossas funções para a renderização do Dashboard:
+
+A função abaixo vai gerar os parametros de renderização do dashboars e receber um token embedado que iremos capturar na nossa próxima função:
+
+ ```javascript
+  function mountConfigAcces(token) {
+    const config = {
+      type: "report",
+      tokenType: models.TokenType.Embed,
+      accessToken: token,
+      embedUrl: embedUrl,
+      id: reportId,
+      permissions: permissions,
+      settings: {
+        layoutType: models.LayoutType.Custom,
+        customLayout: {
+          displayOption: models.DisplayOption.FitToWidth,
+        },
+      },
+    };
+    return config;
+  }
+```
+
+Nesta função vamos fazer a chamada para a rota do nosso back-end para pegar o token e chamar a função criada acima e colocar o token recebido como paremetro
+
+No sucesso da requisição renderizaremos o nosso Dashboard.
+
+ ```javascript
+ function getParametersDasboardAdmin() {
+    $.ajax({
+      async: true,
+      crossDomain: true,
+      url: `${backPowerBi}/powerbi/getToken`,
+      type: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      success: (data) => {
+        var embedContainer = $("#embedContainer")[0];
+        const configAccess = mountConfigAcces(data.token);
+        var report = powerbi.embed(embedContainer, configAccess);
+
+        report.off("loaded");
+
+        report.on("loaded", function () {
+          console.log("Loaded");
+        });
+      },
+      error: (err) => {
+        console.log("error", err);
+      },
+    });
+  }
+```

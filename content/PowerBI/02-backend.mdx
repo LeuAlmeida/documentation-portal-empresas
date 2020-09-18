@@ -1,0 +1,129 @@
+---
+title: "Back End"
+metaTitle: "back-end"
+metaDescription: "back-end"
+---
+- Arquivo .env
+- Arquivo .services.js
+- Arquivo .controller.js
+- Arquivo .routes.js
+---
+## Arquivo .env
+ Vamos configurar nosso arquivo .env com as variáveis necessárias para nosso desenvolvimento:
+
+```javascript
+client_id=c7c283ae-####-####-####-############
+client_secret=nx22OMiEoDzr################+##############=
+dataset_id=2a47c143-####-####-####-############
+workspace_id=5ed877b1-####-####-####-############
+report_id=53bb4afb-####-####-####-############
+pbiUsername=####@einstein.br
+embed_url=https://app.powerbi.com/reportEmbed?reportId=53bb4afb-####-####-####-############&groupId=5ed877b1-####-####-####-############
+```
+Estas informações acima foram capturadas da aplicação do powerbi conforme ensinado no link Power Bi.
+
+## Arquivo services.js
+
+Vamos criar nosso arquivo de serviço que irá contemplar as funções que vamos utilizar para gerar os token de acesso ao nosso painel do Power Bi
+
+
+```javascript
+const axios = require('axios')
+const qs = require('qs');
+
+const generateAuthenticationToken = async () => {
+    var token
+
+    const data = qs.stringify({
+        'grant_type': 'client_credentials',
+        'scope': 'openid',
+        'resource': 'https://analysis.windows.net/powerbi/api',
+        'client_id': process.env.client_id,
+        'client_secret': process.env.client_secret
+    });
+
+    const config = {
+        method: 'post',
+        url: 'https://login.microsoftonline.com/6dc28345-####-####-####-##########/oauth2/token',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data: data
+    };
+
+    const responseToken = await axios(config)
+    return token = responseToken.data.access_token
+}
+
+const generateEmbedUrl = async (token) => {
+    var responseData
+    const embedData = JSON.stringify({
+      "datasets": [{ "id": process.env.dataset_id }],
+      "reports": [{ "id": process.env.report_id }],
+      "targetWorkspaces": [{ "id": process.env.workspace_id }]
+    });
+
+    const embedConfig = {
+      method: 'post',
+      url: 'https://api.powerbi.com/v1.0/myorg/GenerateToken',
+      headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+      },
+      data: embedData
+    }
+
+    try {
+        const responseEmbedUrl = await axios(embedConfig)
+        responseData = responseEmbedUrl.data
+        return responseData
+    } catch (error) {
+        console.log('error', error)
+    }
+}
+
+module.exports = { generateAuthenticationToken, generateEmbedUrl };
+```
+
+Agora vamos explicar o que está ocorrendo acima:
+
+A função generateAuthenticationToken irá disponibilizar o token de acesso para o painel e ao dashboard
+
+A função generateEmbedUrl irá receber o tohen da função generateAuthenticationToken como parametro e nos retornará o tokem embedado de acesso ao dashboard.
+
+## Arquivo controller.js
+
+Neste arquivo vamos orquestrar a ordem das chamadas das funçãoes importadas do arquivo services.js citado acima e irá nos retornar o resultado (Token embedado) ou erro.
+
+```javascript
+const {
+    generateAuthenticationToken,
+    generateEmbedUrl
+} = require('../services/service')
+
+const getAuthenticationToken = async (req, res) => {
+    const token = await generateAuthenticationToken()
+    if (!token) return res.status(400).send('Error on generate Token')
+    const response = await generateEmbedUrl(token)
+    if (response) return res.status(200).json(response)
+    return res.status(400).send('Error on generate response data')
+}
+
+module.exports = { getAuthenticationToken };
+```
+
+## Arquivo routes.js
+
+Agora vamos disponibilizar uma rota:
+
+```javascript
+const express = require("express")
+const routes = express.Router()
+const Controller = require('./app/controllers/controller')
+
+//POWERBI ROUTES
+routes.get("/#######/#######", Controller.getAuthenticationToken);
+
+module.exports = routes
+```
